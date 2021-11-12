@@ -33,3 +33,10 @@
 
 # VSCode
 *.vscode
+
+# Cmake
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+# Ignore Makefile since we are using CMake
+Makefile
