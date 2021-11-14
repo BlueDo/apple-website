@@ -6,9 +6,10 @@ project(Apple)
 SET(GCC_COVERAGE_LINK_FLAGS "-pthread")
 SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
-find_package(Crow REQUIRED)
+
+find_path(CROW_INCLUDE_DIRS "crow.h")
 
 # add the executable
 add_executable(Apple.out gateway.cpp)
 
-target_link_libraries(Apple.out PUBLIC Crow)
+target_include_directories(Apple.out PRIVATE ${CROW_INCLUDE_DIRS})

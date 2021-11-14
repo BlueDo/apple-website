@@ -2,6 +2,14 @@
     "name": "apple",
     "version-string": "0.0.1",
     "dependencies": [
-        "crow"
+        "crow",
+        "boost-array",
+        "boost-algorithm",
+        "boost-asio",
+        "boost-date-time",
+        "boost-functional",
+        "boost-lexical-cast",
+        "boost-optional",
+        "zlib"
     ]
 }
