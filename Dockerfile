@@ -11,6 +11,8 @@ RUN apt-get install -y cmake protobuf-compiler
 RUN git clone https://github.com/Microsoft/vcpkg.git /vcpkg
 RUN ./vcpkg/bootstrap-vcpkg.sh
 
-COPY . /src
-RUN rm -rf /src/build/*
-RUN cmake -B /src/build -S /src -DCMAKE_TOOLCHAIN_FILE=/vcpkg/scripts/buildsystems/vcpkg.cmake
+COPY . .
+RUN rm -rf /build/*
+RUN cmake -B /build -S . -DCMAKE_TOOLCHAIN_FILE=/vcpkg/scripts/buildsystems/vcpkg.cmake
+RUN make -C build
+CMD ["./build/Apple.out"]

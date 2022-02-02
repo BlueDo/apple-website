@@ -1,11 +1,8 @@
 
-Pre-requisites
-sudo apt-get update
-sudo apt-get install build-essential
-sudo apt-get install pkg-config
+Set up for Environment is in Dockerfile
+Run the following:
+docker build -t appletest .
+docker run -p 18080:18080 -d --rm appletest
 
-
-
-Command to build libraries
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=[pathtovcpkg]/scripts/buildsystems/vcpkg.cmake
+Todo:
+Figure out how to speed up build time (currently around 5 minutes)
